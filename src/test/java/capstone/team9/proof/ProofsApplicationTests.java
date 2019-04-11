@@ -1,4 +1,4 @@
-package capstone.team9.proofs;
+package capstone.team9.proof;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
