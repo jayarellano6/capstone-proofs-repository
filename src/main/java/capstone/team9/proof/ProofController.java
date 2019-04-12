@@ -2,22 +2,17 @@ package capstone.team9.proof;
 
 import capstone.team9.proof.models.Proofs;
 import capstone.team9.proof.repositories.ProofRepository;
-import com.fasterxml.jackson.databind.JsonSerializable;
-import com.google.gson.Gson;
-import jdk.nashorn.internal.parser.JSONParser;
 import org.json.JSONArray;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.Date;
 
+@CrossOrigin("*")
 @RestController
 public class ProofController {
-
     @Autowired
     ProofRepository proofRepository;
 
