@@ -17,7 +17,7 @@ public class ProofController {
     ProofRepository proofRepository;
 
     @CrossOrigin(origins = "*")
-    @RequestMapping(value="/saveproof", method=RequestMethod.POST)
+    @RequestMapping(value="saveproof", method=RequestMethod.POST)
     public boolean saveproof(@RequestBody String input){
         JSONObject jsonObject = new JSONObject(input);
 
