@@ -3,18 +3,27 @@ package capstone.team9.proof.models;
 import org.springframework.data.annotation.Id;
 
 import java.util.Arrays;
+import java.util.Date;
 
 public class Proofs {
 
     @Id
     private String id;
+    private String userSubmitted;
     private String[] Premise;
     private String[] Logic;
     private String[] Rules;
+    private Date timeSubmitted;
+
+    private String Conclusion;
 
     public String getId() { return id; }
 
     public void setId(String id) { this.id = id; }
+
+    public String getUserSubmitted() { return userSubmitted; }
+
+    public void setUserSubmitted(String userSubmitted) { this.userSubmitted = userSubmitted; }
 
     public String[] getPremise() { return Premise; }
 
@@ -28,14 +37,22 @@ public class Proofs {
 
     public void setRules(String[] rules) { Rules = rules; }
 
+    public String getConclusion() { return Conclusion; }
+
+    public void setConclusion(String conclusion) { Conclusion = conclusion; }
+
+    public Date getTimeSubmitted() { return timeSubmitted; }
+
+    public void setTimeSubmitted(Date timeSubmitted) { this.timeSubmitted = timeSubmitted; }
+
     @Override
     public String toString() {
-        return "Proof{" +
-                "Premise=" + Arrays.toString(Premise) +
+        return "Proofs{" +
+                "id='" + id + '\'' +
+                ", Premise=" + Arrays.toString(Premise) +
                 ", Logic=" + Arrays.toString(Logic) +
                 ", Rules=" + Arrays.toString(Rules) +
+                ", Conclusion='" + Conclusion + '\'' +
                 '}';
     }
-
-
 }
