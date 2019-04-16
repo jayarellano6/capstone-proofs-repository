@@ -50,7 +50,7 @@ public class ProofController {
         Date date = new Date();
         proof.setTimeSubmitted(date);
 
-//        proofRepository.save(proof);
+        proofRepository.save(proof);
         proofRepository.insert(proof);
         return true;
     }
