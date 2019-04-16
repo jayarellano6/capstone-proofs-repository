@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProofRepository extends MongoRepository<Proofs, String> {
-    Proofs findByIdEquals(String id);
+//    Proofs findByIdEquals(String id);
 }
