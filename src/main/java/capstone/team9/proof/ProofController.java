@@ -23,7 +23,6 @@ public class ProofController {
 
         Proofs proof = new Proofs();
 
-        proof.setId(jsonObject.get("id").toString());
         proof.setUserSubmitted(jsonObject.get("id").toString());
 
         //converting the JSOArrays to String Arrays
