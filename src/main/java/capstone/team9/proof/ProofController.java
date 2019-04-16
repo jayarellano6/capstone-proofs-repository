@@ -24,7 +24,6 @@ public class ProofController {
         Proofs proof = new Proofs();
 
         proof.setUserSubmitted(jsonObject.get("id").toString());
-
         //converting the JSOArrays to String Arrays
         JSONArray arr = new JSONArray(jsonObject.getJSONArray("Premise").toString());
         String[] Premise = new String[arr.length()];
@@ -46,6 +45,9 @@ public class ProofController {
         proof.setRules(Rules);
         //done with array converting
 
+        proof.setProofCompleted(((Boolean) jsonObject.get("proofCompleted")));
+        proof.setConclusion(jsonObject.get("conclusion").toString());
+        
         Date date = new Date();
         proof.setTimeSubmitted(date);
 

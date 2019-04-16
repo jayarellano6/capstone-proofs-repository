@@ -13,8 +13,8 @@ public class Proofs {
     private String[] Premise;
     private String[] Logic;
     private String[] Rules;
+    private  boolean proofCompleted;
     private Date timeSubmitted;
-
     private String Conclusion;
 
     public String getId() { return id; }
@@ -41,6 +41,10 @@ public class Proofs {
 
     public void setConclusion(String conclusion) { Conclusion = conclusion; }
 
+    public boolean isProofCompleted() { return proofCompleted; }
+
+    public void setProofCompleted(boolean proofCompleted) { this.proofCompleted = proofCompleted; }
+
     public Date getTimeSubmitted() { return timeSubmitted; }
 
     public void setTimeSubmitted(Date timeSubmitted) { this.timeSubmitted = timeSubmitted; }
@@ -55,4 +59,5 @@ public class Proofs {
                 ", Conclusion='" + Conclusion + '\'' +
                 '}';
     }
+
 }
