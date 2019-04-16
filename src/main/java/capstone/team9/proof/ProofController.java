@@ -51,7 +51,7 @@ public class ProofController {
         proof.setTimeSubmitted(date);
 
         proofRepository.save(proof);
-        proofRepository.insert(proof);
+        //proofRepository.insert(proof);
         return true;
     }
 }
