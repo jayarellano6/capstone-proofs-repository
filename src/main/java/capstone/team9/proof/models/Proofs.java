@@ -13,7 +13,7 @@ public class Proofs {
     private String[] Premise;
     private String[] Logic;
     private String[] Rules;
-    private  boolean proofCompleted;
+    private  String proofCompleted;
     private Date timeSubmitted;
     private String Conclusion;
 
@@ -41,9 +41,9 @@ public class Proofs {
 
     public void setConclusion(String conclusion) { Conclusion = conclusion; }
 
-    public boolean isProofCompleted() { return proofCompleted; }
+    public String isProofCompleted() { return proofCompleted; }
 
-    public void setProofCompleted(boolean proofCompleted) { this.proofCompleted = proofCompleted; }
+    public void setProofCompleted(String proofCompleted) { this.proofCompleted = proofCompleted; }
 
     public Date getTimeSubmitted() { return timeSubmitted; }
 

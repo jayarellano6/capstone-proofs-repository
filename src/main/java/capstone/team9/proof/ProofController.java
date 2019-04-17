@@ -21,6 +21,7 @@ public class ProofController {
     public boolean saveproof(@RequestBody String input){
         JSONObject jsonObject = new JSONObject(input);
 
+        System.out.println(input);
         Proofs proof = new Proofs();
 
         proof.setUserSubmitted(jsonObject.get("id").toString());
@@ -45,7 +46,7 @@ public class ProofController {
         proof.setRules(Rules);
         //done with array converting
 
-        proof.setProofCompleted(((Boolean) jsonObject.get("proofCompleted")));
+        proof.setProofCompleted(jsonObject.get("proofCompleted").toString());
         proof.setConclusion(jsonObject.get("conclusion").toString());
         
         Date date = new Date();
