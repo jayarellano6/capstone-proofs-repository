@@ -10,6 +10,7 @@ public class Proofs {
     @Id
     private String id;
     private String userSubmitted;
+    private String proofName;
     private String[] Premise;
     private String[] Logic;
     private String[] Rules;
@@ -60,4 +61,7 @@ public class Proofs {
                 '}';
     }
 
+    public String getProofName() { return proofName; }
+
+    public void setProofName(String proofName) { this.proofName = proofName; }
 }

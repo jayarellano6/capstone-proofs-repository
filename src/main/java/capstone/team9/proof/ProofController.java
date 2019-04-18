@@ -24,7 +24,9 @@ public class ProofController {
         System.out.println(input);
         Proofs proof = new Proofs();
 
-        proof.setUserSubmitted(jsonObject.get("id").toString());
+        proof.setUserSubmitted(jsonObject.get("userSubmitted").toString());
+        proof.setProofName(jsonObject.get("proofName").toString());
+
         //converting the JSOArrays to String Arrays
         JSONArray arr = new JSONArray(jsonObject.getJSONArray("Premise").toString());
         String[] Premise = new String[arr.length()];
@@ -48,11 +50,9 @@ public class ProofController {
 
         proof.setProofCompleted(jsonObject.get("proofCompleted").toString());
         proof.setConclusion(jsonObject.get("conclusion").toString());
-        
         Date date = new Date();
         proof.setTimeSubmitted(date);
 
-        //proofRepository.save(proof);
         proofRepository.insert(proof);
         return true;
     }
