@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import java.util.Date;
+import java.util.List;
 
 @CrossOrigin("*")
 @RestController
@@ -56,4 +57,12 @@ public class ProofController {
         proofRepository.insert(proof);
         return true;
     }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("user/{user}")
+    public List<Proofs> getProofsByUser(@PathVariable String user){
+        List<Proofs> pList = proofRepository.findProofsByUser(user);
+        return pList;
+    }
+
 }
