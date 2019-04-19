@@ -1,6 +1,7 @@
 package capstone.team9.proof;
 
 import capstone.team9.proof.models.Proofs;
+import capstone.team9.proof.models.User;
 import capstone.team9.proof.repositories.ProofRepository;
 import org.json.JSONArray;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,6 +26,7 @@ public class ProofController {
         System.out.println(input);
         Proofs proof = new Proofs();
 
+        proof.setEntryType(jsonObject.get("entryType").toString());
         proof.setUserSubmitted(jsonObject.get("userSubmitted").toString());
         proof.setProofName(jsonObject.get("proofName").toString());
 
@@ -63,6 +65,20 @@ public class ProofController {
     public List<Proofs> getProofsByUser(@PathVariable String user){
         List<Proofs> pList = proofRepository.findProofsByUser(user);
         return pList;
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("all/{user}")
+    public List<User> getAllUsers(@PathVariable String user){
+        List<User> uList = proofRepository.getAllUsers(user);
+        return uList;
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("login/{username}")
+    public User userLogin(@PathVariable String username){
+        User retUser = proofRepository.getUserByUsername(username);
+        return retUser;
     }
 
 }

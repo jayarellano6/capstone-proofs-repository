@@ -9,6 +9,7 @@ public class Proofs {
 
     @Id
     private String id;
+    private String entryType;
     private String userSubmitted;
     private String proofName;
     private String[] Premise;
@@ -42,13 +43,21 @@ public class Proofs {
 
     public void setConclusion(String conclusion) { Conclusion = conclusion; }
 
-    public String isProofCompleted() { return proofCompleted; }
+    public String getProofCompleted() { return proofCompleted; }
 
     public void setProofCompleted(String proofCompleted) { this.proofCompleted = proofCompleted; }
 
     public Date getTimeSubmitted() { return timeSubmitted; }
 
     public void setTimeSubmitted(Date timeSubmitted) { this.timeSubmitted = timeSubmitted; }
+
+    public String getProofName() { return proofName; }
+
+    public void setProofName(String proofName) { this.proofName = proofName; }
+
+    public String getEntryType() { return entryType; }
+
+    public void setEntryType(String entryType) { this.entryType = entryType; }
 
     @Override
     public String toString() {
@@ -61,7 +70,4 @@ public class Proofs {
                 '}';
     }
 
-    public String getProofName() { return proofName; }
-
-    public void setProofName(String proofName) { this.proofName = proofName; }
 }
