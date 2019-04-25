@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface ProofRepository extends MongoRepository<ProofCheckerDb, String> {
-    @Query(value = "{'userSubmitted': ?0, 'proofCompleted' : 'false'")
+    @Query(value = "{'userSubmitted': ?0, 'proofCompleted' : 'false'}")
     List<Proofs> findProofsByUser(String user);
 
     @Query(value = "{'entryType': ?0}")
