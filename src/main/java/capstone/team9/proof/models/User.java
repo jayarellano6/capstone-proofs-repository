@@ -2,7 +2,7 @@ package capstone.team9.proof.models;
 
 import org.springframework.data.annotation.Id;
 
-public class User {
+public class User extends  AbstractEntryClass{
     @Id
     private String id;
     private String entryType;

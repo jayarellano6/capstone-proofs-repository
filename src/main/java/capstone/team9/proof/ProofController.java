@@ -3,7 +3,6 @@ package capstone.team9.proof;
 import capstone.team9.proof.models.Proofs;
 import capstone.team9.proof.models.User;
 import capstone.team9.proof.repositories.ProofRepository;
-import capstone.team9.proof.repositories.UserRepository;
 import org.json.JSONArray;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import java.util.List;
 public class ProofController {
     @Autowired
     ProofRepository proofRepository;
-    UserRepository userRepository;
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value="saveproof", method=RequestMethod.POST)
@@ -75,7 +73,7 @@ public class ProofController {
         user.setEmail(jsonObject.get("email").toString());
         user.setPassword(jsonObject.get("password").toString());
 
-        userRepository.insert(user);
+        proofRepository.insert(user);
         return true;
     }
 
@@ -89,14 +87,14 @@ public class ProofController {
     @CrossOrigin(origins = "*")
     @GetMapping("all/{user}")
     public List<User> getAllUsers(@PathVariable String user){
-        List<User> uList = userRepository.getAllUsers(user);
+        List<User> uList = proofRepository.getAllUsers(user);
         return uList;
     }
 
     @CrossOrigin(origins = "*")
     @GetMapping("login/{username}")
     public User userLogin(@PathVariable String username){
-        User retUser = userRepository.getUserByUsername(username);
+        User retUser = proofRepository.getUserByUsername(username);
         return retUser;
     }
 

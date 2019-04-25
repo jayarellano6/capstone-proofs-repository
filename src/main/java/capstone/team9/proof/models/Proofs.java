@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import java.util.Arrays;
 import java.util.Date;
 
-public class Proofs {
+public class Proofs extends  AbstractEntryClass{
 
     @Id
     private String id;
