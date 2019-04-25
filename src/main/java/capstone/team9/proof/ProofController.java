@@ -85,14 +85,14 @@ public class ProofController {
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("all/{user}")
+    @GetMapping("getall/{user}")
     public List<User> getAllUsers(@PathVariable String user){
         List<User> uList = proofRepository.getAllUsers(user);
         return uList;
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("login/{username}")
+    @GetMapping("li/{username}")
     public User userLogin(@PathVariable String username){
         User retUser = proofRepository.getUserByUsername(username);
         return retUser;

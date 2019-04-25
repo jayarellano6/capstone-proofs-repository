@@ -1,8 +1,11 @@
 package capstone.team9.proof.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class User extends  AbstractEntryClass{
+@Document(collection = "proofs")
+public class User extends AbstractEntryClass{
+
     @Id
     private String id;
     private String entryType;

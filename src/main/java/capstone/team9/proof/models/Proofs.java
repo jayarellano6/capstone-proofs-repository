@@ -1,11 +1,13 @@
 package capstone.team9.proof.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Arrays;
 import java.util.Date;
 
-public class Proofs extends  AbstractEntryClass{
+@Document(collection = "proofs")
+public class Proofs extends AbstractEntryClass{
 
     @Id
     private String id;
@@ -59,15 +61,20 @@ public class Proofs extends  AbstractEntryClass{
 
     public void setEntryType(String entryType) { this.entryType = entryType; }
 
+
     @Override
     public String toString() {
         return "Proofs{" +
                 "id='" + id + '\'' +
+                ", entryType='" + entryType + '\'' +
+                ", userSubmitted='" + userSubmitted + '\'' +
+                ", proofName='" + proofName + '\'' +
                 ", Premise=" + Arrays.toString(Premise) +
                 ", Logic=" + Arrays.toString(Logic) +
                 ", Rules=" + Arrays.toString(Rules) +
+                ", proofCompleted='" + proofCompleted + '\'' +
+                ", timeSubmitted=" + timeSubmitted +
                 ", Conclusion='" + Conclusion + '\'' +
                 '}';
     }
-
 }
