@@ -61,6 +61,23 @@ public class ProofController {
     }
 
     @CrossOrigin(origins = "*")
+    @RequestMapping(value="newuser", method=RequestMethod.POST)
+    public boolean newUser(@RequestBody String input){
+        JSONObject jsonObject = new JSONObject(input);
+
+        System.out.println(input);
+        User user = new User();
+
+        user.setEntryType(jsonObject.get("entryType").toString());
+        user.setUsername(jsonObject.get("username").toString());
+        user.setEmail(jsonObject.get("email").toString());
+        user.setPassword(jsonObject.get("password").toString());
+
+        proofRepository.insert(user);
+        return true;
+    }
+
+    @CrossOrigin(origins = "*")
     @GetMapping("user/{user}")
     public List<Proofs> getProofsByUser(@PathVariable String user){
         List<Proofs> pList = proofRepository.findProofsByUser(user);

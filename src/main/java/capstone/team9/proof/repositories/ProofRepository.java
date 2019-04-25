@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProofRepository extends MongoRepository<Proofs, String> {
+public interface ProofRepository extends MongoRepository<Object, String> {
     @Query(value = "{'userSubmitted': ?0}")
     List<Proofs> findProofsByUser(String user);
 
