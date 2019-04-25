@@ -6,8 +6,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Arrays;
 import java.util.Date;
 
-@Document(collection = "proofs")
-public class Proofs extends AbstractEntryClass{
+@Document(collection = "proofCheckerDb")
+public class Proofs extends ProofCheckerDb {
 
     @Id
     private String id;

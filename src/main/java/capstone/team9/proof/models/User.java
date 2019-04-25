@@ -3,8 +3,8 @@ package capstone.team9.proof.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "proofs")
-public class User extends AbstractEntryClass{
+@Document(collection = "proofCheckerDb")
+public class User extends ProofCheckerDb {
 
     @Id
     private String id;

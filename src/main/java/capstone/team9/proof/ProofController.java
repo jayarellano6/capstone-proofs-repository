@@ -73,7 +73,7 @@ public class ProofController {
         user.setEmail(jsonObject.get("email").toString());
         user.setPassword(jsonObject.get("password").toString());
 
-        proofRepository.insert(user);
+        proofRepository.save(user);
         return true;
     }
 
