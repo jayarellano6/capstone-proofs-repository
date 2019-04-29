@@ -20,6 +20,6 @@ public interface ProofRepository extends MongoRepository<ProofCheckerDb, String>
     @Query(value = "{'entryType' : 'user', 'username' : ?0}")
     User getUserByUsername(String username);
 
-    @Query(value = "{'proofName' : ?0}")
-    Proofs getProofByProofName(String pName);
+    @Query(value = "{'userSubmitted': ?0, 'proofName' : ?1}")
+    Proofs getProofByProofName(String submitted, String pName);
 }

@@ -30,7 +30,7 @@ public class ProofController {
     public boolean saveproof(@RequestBody String input){
 
         JSONObject jsonObject = new JSONObject(input);
-        Proofs existingProof = proofRepository.getProofByProofName(jsonObject.get("proofName").toString());
+        Proofs existingProof = proofRepository.getProofByProofName(jsonObject.get("userSubmitted").toString(), jsonObject.get("proofName").toString());
         System.out.println(existingProof);
 
         if(existingProof == null){
