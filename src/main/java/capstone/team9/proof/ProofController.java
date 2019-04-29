@@ -40,7 +40,7 @@ public class ProofController {
             proof.setEntryType(jsonObject.get("entryType").toString());
             proof.setUserSubmitted(jsonObject.get("userSubmitted").toString());
             proof.setProofName(jsonObject.get("proofName").toString());
-
+            proof.setProofType(jsonObject.get("proofType").toString());
             //converting the JSOArrays to String Arrays
             JSONArray arr = new JSONArray(jsonObject.getJSONArray("Premise").toString());
             String[] Premise = new String[arr.length()];
@@ -77,7 +77,7 @@ public class ProofController {
             ep.setEntryType(jsonObject.get("entryType").toString());
             ep.setUserSubmitted(jsonObject.get("userSubmitted").toString());
             ep.setProofName(jsonObject.get("proofName").toString());
-
+            ep.setProofType(jsonObject.get("proofType").toString());
             //converting the JSOArrays to String Arrays
             JSONArray arr = new JSONArray(jsonObject.getJSONArray("Premise").toString());
             String[] Premise = new String[arr.length()];

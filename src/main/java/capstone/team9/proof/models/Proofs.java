@@ -14,6 +14,7 @@ public class Proofs extends ProofCheckerDb {
     private String entryType;
     private String userSubmitted;
     private String proofName;
+    private String proofType;
     private String[] Premise;
     private String[] Logic;
     private String[] Rules;
@@ -60,6 +61,14 @@ public class Proofs extends ProofCheckerDb {
     public String getEntryType() { return entryType; }
 
     public void setEntryType(String entryType) { this.entryType = entryType; }
+
+    public String getProofType() {
+        return proofType;
+    }
+
+    public void setProofType(String proofType) {
+        this.proofType = proofType;
+    }
 
 
     @Override
