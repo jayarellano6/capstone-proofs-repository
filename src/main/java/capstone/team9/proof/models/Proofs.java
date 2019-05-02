@@ -21,6 +21,7 @@ public class Proofs extends ProofCheckerDb {
     private  String proofCompleted;
     private Date timeSubmitted;
     private String Conclusion;
+    private String repoProblem;
 
     public String getId() { return id; }
 
@@ -85,5 +86,13 @@ public class Proofs extends ProofCheckerDb {
                 ", timeSubmitted=" + timeSubmitted +
                 ", Conclusion='" + Conclusion + '\'' +
                 '}';
+    }
+
+    public String getRepoProblem() {
+        return repoProblem;
+    }
+
+    public void setRepoProblem(String repoProblem) {
+        this.repoProblem = repoProblem;
     }
 }

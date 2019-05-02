@@ -66,6 +66,7 @@ public class ProofController {
             proof.setConclusion(jsonObject.get("conclusion").toString());
             Date date = new Date();
             proof.setTimeSubmitted(date);
+            proof.setRepoProblem(jsonObject.get("repoProblem").toString());
 
             proofRepository.insert(proof);
             return true;
@@ -103,6 +104,7 @@ public class ProofController {
             ep.setConclusion(jsonObject.get("conclusion").toString());
             Date date = new Date();
             ep.setTimeSubmitted(date);
+            ep.setRepoProblem(jsonObject.get("repoProblem").toString());
 
             mongoOperations.save(ep);
             return true;
