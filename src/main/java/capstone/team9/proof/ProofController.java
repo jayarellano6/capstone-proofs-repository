@@ -148,4 +148,11 @@ public class ProofController {
         return retUser;
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping("repo")
+    public List<Proofs> getRepositoryProblems(){
+        List<Proofs> p = proofRepository.getAllRepositoryProofs();
+        return p;
+    }
+
 }
