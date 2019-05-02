@@ -157,4 +157,11 @@ public class ProofController {
         return p;
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping("completedrepo/{user}")
+    public List<Proofs> getCompletedRepoProblems(@PathVariable  String user){
+        List<Proofs> p = proofRepository.getCompletedRepoProofs(user);
+        return p;
+    }
+
 }

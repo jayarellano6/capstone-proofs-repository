@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface ProofRepository extends MongoRepository<ProofCheckerDb, String> {
-    @Query(value = "{'userSubmitted': ?0, 'proofCompleted' : 'false', 'proofName' : { $regex: '^((?!^n\\/a).)*$' }}")
+    @Query(value = "{'userSubmitted': ?0, 'proofCompleted' : 'false', 'proofName' : { $regex: '^((?!^n\\/a).)*$'}}")
     List<Proofs> findProofsByUser(String user);
 
     @Query(value = "{'entryType': ?0}")
@@ -25,4 +25,7 @@ public interface ProofRepository extends MongoRepository<ProofCheckerDb, String>
 
     @Query(value = "{'proofName' : { $regex: '^Repository -' }, 'userSubmitted': 'dr.bruns'}")
     List<Proofs> getAllRepositoryProofs();
+
+    @Query(value = "{'proofName' : { $regex: '^Repository -' }, 'userSubmitted': ?0, 'proofCompleted': 'true'}")
+    List<Proofs> getCompletedRepoProofs(String user);
 }
