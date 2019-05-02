@@ -23,6 +23,6 @@ public interface ProofRepository extends MongoRepository<ProofCheckerDb, String>
     @Query(value = "{'userSubmitted': ?0, 'proofName' : ?1}")
     Proofs getProofByProofName(String submitted, String pName);
 
-    @Query(value = "{'proofName' : { $regex: '^Repository -' }}")
+    @Query(value = "{'proofName' : { $regex: '^Repository -' }, 'userSubmitted': 'dr.bruns'}")
     List<Proofs> getAllRepositoryProofs();
 }
