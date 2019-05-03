@@ -164,4 +164,11 @@ public class ProofController {
         return p;
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping("repodata")
+    public List<Proofs> getRepoData(){
+        List<Proofs> p = proofRepository.getRepoProofData();
+        return p;
+    }
+
 }

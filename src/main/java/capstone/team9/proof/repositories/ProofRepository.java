@@ -28,4 +28,7 @@ public interface ProofRepository extends MongoRepository<ProofCheckerDb, String>
 
     @Query(value = "{'proofName' : { $regex: '^Repository -' }, 'userSubmitted': ?0, 'proofCompleted': 'true'}")
     List<Proofs> getCompletedRepoProofs(String user);
+
+    @Query(value = "{'repoProblem': 'true', 'userSubmitted': { $regex: '^((?!drbruns).)*$'}}")
+    List<Proofs> getRepoProofData();
 }
